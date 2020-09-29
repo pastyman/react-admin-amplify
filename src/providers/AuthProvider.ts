@@ -36,11 +36,16 @@ export class AuthProvider {
     newPassword,
     clientMetadata,
   }: Record<string, unknown>): Promise<string> => {
-    return Auth.changePassword( 
+    // return Auth.changePassword( 
+    //   <CognitoUser>user,
+    //   <string>oldPassword,
+    //   <string>newPassword,
+    //   <ClientMetaData>clientMetadata
+    // );
+
+    return Auth.completeNewPassword(
       <CognitoUser>user,
-      <string>oldPassword,
-      <string>newPassword,
-      <ClientMetaData>clientMetadata
+      <string>newPassword
     );
   };  
 
