@@ -585,6 +585,7 @@ function buildAuthProvider(options) {
     var authProvider = new AuthProvider(options);
     return {
         login: authProvider.login,
+        changePassword: authProvider.changePassword,
         logout: authProvider.logout,
         checkAuth: authProvider.checkAuth,
         checkError: authProvider.checkError,
