@@ -30,6 +30,20 @@ export class AuthProvider {
     );
   };
 
+  public changePassword = ({
+    user,
+    oldPassword,
+    newPassword,
+    clientMetadata,
+  }: Record<string, unknown>): Promise<string> => {
+    return Auth.changePassword( 
+      <CognitoUser>user,
+      <string>oldPassword,
+      <string>newPassword,
+      <ClientMetaData>clientMetadata
+    );
+  };  
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public logout = (): Promise<any> => {
     return Auth.signOut();
